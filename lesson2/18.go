@@ -1,9 +1,17 @@
 package main
 
-func main() {
-	//Имя возраст
-	//если год его рождения меньше 2000 то необходимо написать
+import "fmt"
 
-	//ИМЯ дитя девяностых
-	//ИМЯ новое поколение
+func main() {
+	var a int
+	var name string
+	res := "res"
+	fmt.Scanf("%s %d", &name, &a)
+	if 2000 > 2021-a {
+		res = "дитя девяностых"
+	} else if 2000 <= 2021-a {
+		res = "новое поколение"
+	}
+	fmt.Printf("%s %d", name, res)
+
 }

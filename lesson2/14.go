@@ -3,10 +3,13 @@ package main
 import "fmt"
 
 func main() {
-	a := 10
-	b := 4
-	c := 5
-	maxi := 0
-	//code
-	fmt.Println(maxi)
+	//var s string
+	//s = "Hello"
+	var c string
+	fmt.Scan(&c)
+	if c == "Yerassyl" {
+		fmt.Println("Hello Yerassyl")
+	} else {
+		fmt.Println("unknown")
+	}
 }

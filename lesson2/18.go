@@ -13,5 +13,4 @@ func main() {
 		res = "новое поколение"
 	}
 	fmt.Printf("%s %d", name, res)
-
 }

@@ -1,8 +1,24 @@
 package main
 
+import "fmt"
+
 func main() {
-	//необходимо с slice должен заполниться числами от 1-20
-	//необходимо создать еще два slice (a,b)
-	//в slice a положить только четные числа
-	//в slice b положить только нечетные числа
+	c := []int{}
+	a := []int{}
+	b := []int{}
+	n := 20
+	for i := 1; i <= n; i++ {
+		c = append(c, i)
+	}
+	fmt.Println(c)
+	for i := 0; i < len(c); i++ {
+		if c[i]%2 == 0 {
+			a = append(a, c[i])
+		} else {
+			b = append(b, c[i])
+		}
+	}
+	fmt.Println(a)
+	fmt.Println(b)
+
 }

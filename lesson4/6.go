@@ -8,7 +8,7 @@ func main() {
 	n := len(a)
 	fmt.Println(a)
 	fmt.Println(n)
-	a = append(a, 3)
+	a = append(a, 3, 3, 4, 5)
 	fmt.Println(a)
 	fmt.Println(len(a))
 }

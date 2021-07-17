@@ -10,11 +10,23 @@ func GetSumOfArr(a []int) int {
 	return sumi
 }
 
+func removeFromArr(a []int, value int) []int {
+	index := 0
+	for i := 0; i < len(a); i++ {
+		if a[i] == value {
+			index = i
+			break
+		}
+	}
+	part1 := a[:index]
+	part2 := a[index+1:]
+	part1 = append(part1, part2...)
+	return part1
+}
+
 func main() {
 	arr1 := []int{1, 2, 3, 4, 5, 2}
-	arr2 := []int{33, 41, 123, 1}
-	k1 := GetSumOfArr(arr1)
-	k2 := GetSumOfArr(arr2)
-	fmt.Println(k1)
-	fmt.Println(k2)
+	fmt.Println(arr1)
+	arr1 = removeFromArr(arr1, 2)
+	fmt.Println(arr1)
 }

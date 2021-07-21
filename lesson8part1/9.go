@@ -32,5 +32,5 @@ func makeFilter(s, character string) string {
 
 func main() {
 	s := "asdsd dfdfd qwetx xcxsdsew"
-	fmt.Println(makeFilter(s, "a"))
+	fmt.Println(makeFilter(s, "d"))
 }

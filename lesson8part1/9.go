@@ -16,13 +16,13 @@ func ifSymbolNotExist(word, symbol string) bool {
 	return isNotExist
 }
 
-func makeFilter(s string) string {
+func makeFilter(s, character string) string {
 	result := ""
 	words := strings.Split(s, " ")
 	filtered := []string{}
 	for i := 0; i < len(words); i++ {
 		element := words[i]
-		if ifSymbolNotExist(element, "e") {
+		if ifSymbolNotExist(element, character) {
 			filtered = append(filtered, element)
 		}
 	}
@@ -32,5 +32,5 @@ func makeFilter(s string) string {
 
 func main() {
 	s := "asdsd dfdfd qwetx xcxsdsew"
-	fmt.Println(makeFilter(s))
+	fmt.Println(makeFilter(s, "a"))
 }

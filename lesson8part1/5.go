@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	words := []string{"hello", "yerassyl"}
-	s := strings.Join(words, " ")
+	words := []string{"hello", "yerassyl", "19"}
+	s := strings.Join(words, "+")
 	fmt.Println(s)
 }

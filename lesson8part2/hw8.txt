@@ -13,3 +13,6 @@ m = 4
 [10, 26, 15]
 
 Ответ:[26,25,10]
+
+
+generate array lesson6 -> 6.go

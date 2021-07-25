@@ -12,6 +12,16 @@ func main() {
 	//в ней должны быть поля name, age
 	//создать три переменные подобного типа и заполнить значениями
 	//вывести имя самого старшего
+	p1 := Person1{
+		Name: "",
+		Age:  0,
+	}
+	p2 := Person1{
+		Name: "",
+		Age:  0,
+	}
+	myPersons := []Person1{p1, p2}
+
 	persons := []Person1{
 		{
 			Name: "person1",
@@ -26,9 +36,8 @@ func main() {
 			Age:  15,
 		},
 	}
-	example := Person1{}
 	for i := 0; i < len(persons); i++ {
 		fmt.Println(persons[i].Name, persons[i].Age)
-		example = persons[i]
+
 	}
 }

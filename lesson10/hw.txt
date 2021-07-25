@@ -12,3 +12,12 @@ marks []int
 https://metanit.com/go/tutorial/4.2.php
 https://metanit.com/go/tutorial/4.3.php
 https://metanit.com/go/tutorial/4.4.php
+
+3)
+https://acmp.ru/index.asp?main=task&id_task=131
+структура
+name   string
+gender string    ->M,W
+age     int
+
+Человек по имени name его возраст age и он является самым старшим

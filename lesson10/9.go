@@ -29,4 +29,11 @@ func main() {
 			fmt.Println(books[i].Name)
 		}
 	}
+	maxi := books[0]
+	for i := 0; i < n; i++ {
+		if maxi.Price < books[i].Price {
+			maxi = books[i]
+		}
+	}
+	fmt.Println(maxi)
 }

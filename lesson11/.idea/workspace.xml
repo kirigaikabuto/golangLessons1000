@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7f9cdaac-b5c9-4d38-adf5-422bafb5a663" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/120.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/9.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/8.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/10.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/data.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/7.go" beforeDir="false" afterPath="$PROJECT_DIR$/7.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/120.go" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,6 +51,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\77086\go\src\github.com\kirigaikabuto\golanglessons1000\lesson11" />
       <recent name="C:\Users\77086\go\src\github.com\kirigaikabuto\golanglessons1000\lesson11\data" />
     </key>
   </component>

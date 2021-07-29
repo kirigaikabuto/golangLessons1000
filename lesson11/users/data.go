@@ -1,6 +1,9 @@
 package users
 
 func NewUser(username, password string) UserInter {
+	if username == "gavno" {
+		return user{}
+	}
 	return user{Username: username, Password: password}
 }
 

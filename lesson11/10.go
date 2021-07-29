@@ -6,6 +6,6 @@ import (
 )
 
 func main() {
-	u1 := users.NewUser("kirito", "password")
+	u1 := users.NewUser("gavno", "password")
 	fmt.Println(u1.GetAllData())
 }

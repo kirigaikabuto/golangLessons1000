@@ -9,3 +9,17 @@ project
     package1(folder) (package package1)
     package2(folder) (package package2)
     main.go(package main)
+
+
+Есть книга и есть категориии
+Категории:
+        name:string
+
+Book:
+    name:string
+    price:float64
+    category:Категории
+
+printData()
+
+BookName: , BookPrice: , BookCategory: ,

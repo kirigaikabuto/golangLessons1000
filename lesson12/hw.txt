@@ -1,0 +1,19 @@
+1)
+создать структуру в которой будет храниться информация об ученике и его оценках
+Mark:
+    Name:string
+    Value:int
+
+GetMark():string -> "Name:...., Value:...."
+
+example:
+Name:A,B,C,D,E,F
+Value:100,90,80,60,50,40
+
+Ученик:
+    FirstName:string
+    LastName:string
+    Marks:[]Mark
+
+GetFullInfo():string -> "FirstName:..., LastName:...., Marks:[A,B,C,D,E,F]"
+GetAverageMark():int ->

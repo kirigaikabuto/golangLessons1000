@@ -1,0 +1,5 @@
+Person
+    FirstName:string
+    LastName:string
+    Balance:int
+    FullName:string

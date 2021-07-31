@@ -3,3 +3,9 @@ Person
     LastName:string
     Balance:int
     FullName:string
+
+
+project
+    package1(folder) (package package1)
+    package2(folder) (package package2)
+    main.go(package main)

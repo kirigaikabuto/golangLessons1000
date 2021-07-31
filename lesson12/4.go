@@ -1,5 +1,12 @@
 package main
 
+import "github.com/kirigaikabuto/golanglessons1000/lesson12/users"
+
 func main() {
-	//создать стр
+	u1 := users.User{
+		"123",
+		"kirito",
+		"123",
+	}
+	u1.PrintData()
 }

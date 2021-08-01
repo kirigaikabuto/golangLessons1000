@@ -17,6 +17,7 @@ func main() {
 		LastName:  "tleugazy",
 		Marks:     marks1,
 	}
+	st1.AddMark(markE)
 	st1.PrintFullInfo()
 	marks2 := []student.Mark{
 		markA, markB, markC, markD, markE, markF,

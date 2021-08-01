@@ -1,0 +1,11 @@
+//Product:
+    Name:string
+    Price:int
+  GetFullInfo():string
+
+//Basket:
+    Name:string
+    Products:[]Product
+
+    AddProduct(p Product)
+    PrintProducts() //вывод всех продуктов

@@ -11,6 +11,10 @@ type Student struct {
 	Marks     []Mark
 }
 
+func (s *Student) AddMark(mark Mark) {
+
+}
+
 func (s *Student) PrintFullInfo() {
 	res := "FirstName:%s; LastName:%s; Marks: [%s]; Avg: %d"
 	marks := []string{}

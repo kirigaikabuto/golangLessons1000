@@ -9,3 +9,17 @@
 
     AddProduct(p Product)
     PrintProducts() //вывод всех продуктов
+//////////////////////////HW////////////////////
+//Student
+    FullName:string
+    AverageMark:int
+
+    getFullInfo():string
+
+//Grade:
+    Name:string
+    Students:[]Student
+
+    AddStudent(st Student)
+    ListStudents()
+    PrintStudentWithBiggestAverageMark()

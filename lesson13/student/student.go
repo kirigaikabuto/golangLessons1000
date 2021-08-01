@@ -12,7 +12,7 @@ type Student struct {
 }
 
 func (s *Student) AddMark(mark Mark) {
-
+	s.Marks = append(s.Marks, mark)
 }
 
 func (s *Student) PrintFullInfo() {

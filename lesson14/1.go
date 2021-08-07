@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"github.com/kirigaikabuto/golanglessons1000/lesson14/shop"
 )
 
@@ -51,6 +52,8 @@ func main() {
 	shopAlser.PrintProducts("add product result")
 	shopAlser.BuyProduct("3", 4)
 	shopAlser.PrintProducts("after buying of product by id 4")
+	fmt.Println(shopAlser.GetCategories())
+	shopAlser.PrintProductsCountByCategories()
 	//fmt.Println(shopAlser.GetAveragePrice())
 	//fmt.Println(shopAlser.GetCountOfProducts())
 	//shopAlser.RemoveProduct("3")

@@ -55,3 +55,33 @@ func (s *Shop) BuyProduct(id string, count int) {
 		}
 	}
 }
+
+func (s *Shop) GetCategories() []string {
+	categories := []string{}
+	for i := 0; i < s.GetCountOfProducts(); i++ {
+		isExist := false
+		for j := 0; j < len(categories); j++ {
+			if s.Products[i].Category.Name == categories[j] {
+				isExist = true
+				break
+			}
+		}
+		if !isExist {
+			categories = append(categories, s.Products[i].Category.Name)
+		}
+	}
+	return categories
+}
+
+func (s *Shop) PrintProductsCountByCategories() {
+	categories := s.GetCategories()
+	for j := 0; j < len(categories); j++ {
+		count := 0
+		for i := 0; i < s.GetCountOfProducts(); i++ {
+			if s.Products[i].Category.Name == categories[j] {
+				count += 1
+			}
+		}
+		fmt.Println(fmt.Sprintf("%s:%d",categories[j],count))
+	}
+}

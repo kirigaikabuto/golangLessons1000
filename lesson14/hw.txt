@@ -1,0 +1,28 @@
+Genre:
+    name:string
+
+Book:
+    Id:string
+    Name:string
+    Author:string
+    Price:int
+    Count:int
+    Genre:Genre
+
+GetBookInfo():string
+PrintBookInfo()
+
+
+Library:
+    Name:string
+    Address:string
+    Books:[]Book
+
+PrintBooksInformation() -> вывод инфы по всем книгам
+PrintLibraryInfo() -> Name:...;Address:...
+AddBook(b Book)
+RemoveBook(id string)
+BuyBook(id string, count int) -> механизм уменьшения count в Book
+GetGenres()[]string
+PrintBooksCountByGenres()
+GetAveragePrice()

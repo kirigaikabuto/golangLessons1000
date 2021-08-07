@@ -1,0 +1,16 @@
+Shop
+    Name:string
+    Product:[]product
+
+GetAveragePrice():int
+PrintProducts()
+
+Product
+    name:string
+    price:int
+    category:Category
+
+GetInfo():string
+
+Category
+    name:string

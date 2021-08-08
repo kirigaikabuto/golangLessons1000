@@ -29,7 +29,7 @@ func main() {
 		return
 	}
 	items := []todo.Todo{}
-	err = json.Unmarshal(dataJson, &items)
+	err = json.Unmarshal(dataJson, items)
 	if err != nil {
 		fmt.Println(err)
 		return

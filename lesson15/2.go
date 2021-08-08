@@ -10,8 +10,14 @@ import (
 
 func main() {
 	url := "http://jsonplaceholder.typicode.com/todos/2"
-	client := http.Client{}
-	response, err := client.Get(url)
+	client := &http.Client{}
+	req, err := http.NewRequest("GET", url, nil)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	req.Header.Add("Accept", "application/json")
+	response, err := client.Do(req)
 	if err != nil {
 		fmt.Println(err)
 		return

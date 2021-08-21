@@ -8,13 +8,13 @@ import (
 )
 
 func main() {
-	//createTableQuery := `
-	//	create table if not exits users(
-	//		id text,
-	//		name text,
-	//		primary key(id)
-	//	);
-	//`
+	createTableQuery := `
+		create table if not exists users(
+			id text,
+			name text,
+			primary key(id)
+		);
+	`
 	host := "localhost"
 	port := "5432"
 	user := "setdatauser" //postgres
@@ -32,4 +32,19 @@ func main() {
 		log.Fatal(err)
 		return
 	}
+	_, err = db.Exec(createTableQuery)
+	if err != nil {
+		log.Fatal(err)
+		return
+	}
+	//insert
+	idValue := "2"
+	nameValue := "kirito"
+	queryInsert := "insert into users (id, name) values ($1, $2)"
+	result, err := db.Exec(queryInsert, idValue, nameValue)
+	if err != nil {
+		log.Fatal(err)
+		return
+	}
+	fmt.Println(result)
 }

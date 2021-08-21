@@ -17,9 +17,9 @@ func main() {
 	//`
 	host := "localhost"
 	port := "5432"
-	user := "setdatauser"
+	user := "setdatauser" //postgres
 	database := "lesson17intro"
-	password := "123456789"
+	password := "123456789" //admin
 	params := "sslmode=disable"
 	connectionString := fmt.Sprintf("postgres://%s:%s@%s:%s/%s?%s", user, password, host, port, database, params)
 	db, err := sql.Open("postgres", connectionString)

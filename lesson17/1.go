@@ -2,10 +2,27 @@ package main
 
 import (
 	"database/sql"
+	"errors"
 	"fmt"
 	_ "github.com/lib/pq"
 	"log"
 )
+
+func insertData(idValue, nameValue string, db *sql.DB) error {
+	queryInsert := "insert into users (id, name) values ($1, $2)"
+	result, err := db.Exec(queryInsert, idValue, nameValue)
+	if err != nil {
+		return err
+	}
+	n, err := result.RowsAffected()
+	if err != nil {
+		return err
+	}
+	if n <= 0 {
+		return errors.New("error during creating of user")
+	}
+	return nil
+}
 
 func main() {
 	createTableQuery := `
@@ -38,21 +55,9 @@ func main() {
 		return
 	}
 	//insert
-	idValue := "4"
-	nameValue := "kirito"
-	queryInsert := "insert into users (id, name) values ($1, $2)"
-	result, err := db.Exec(queryInsert, idValue, nameValue)
+	err = insertData("5", "yerassl", db)
 	if err != nil {
 		log.Fatal(err)
-		return
-	}
-	n, err := result.RowsAffected()
-	if err != nil {
-		log.Fatal(err)
-		return
-	}
-	if n <= 0 {
-		log.Fatal("some error during insert")
 		return
 	}
 

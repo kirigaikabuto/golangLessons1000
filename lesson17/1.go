@@ -39,6 +39,8 @@ func main() {
 		return
 	}
 	//insert
-	models.InsertData("5", "yerassl", db)
-
+	//models.InsertData("5", "yerassl", db)
+	//select
+	users := models.GetData(db)
+	fmt.Println(users)
 }

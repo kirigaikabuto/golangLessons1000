@@ -38,7 +38,7 @@ func main() {
 		return
 	}
 	//insert
-	idValue := "2"
+	idValue := "4"
 	nameValue := "kirito"
 	queryInsert := "insert into users (id, name) values ($1, $2)"
 	result, err := db.Exec(queryInsert, idValue, nameValue)
@@ -46,5 +46,14 @@ func main() {
 		log.Fatal(err)
 		return
 	}
-	fmt.Println(result)
+	n, err := result.RowsAffected()
+	if err != nil {
+		log.Fatal(err)
+		return
+	}
+	if n <= 0 {
+		log.Fatal("some error during insert")
+		return
+	}
+
 }

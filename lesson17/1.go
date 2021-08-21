@@ -1,21 +1,35 @@
 package main
 
 import (
+	"database/sql"
 	"fmt"
-	"github.com/kirigaikabuto/golanglessons1000/lesson17/models"
+	_ "github.com/lib/pq"
 	"log"
 )
 
 func main() {
-	userStore := models.NewUserStore("localhost", "5432", "kirito", "12345")
-	u := models.User{
-		Username: "user1",
-		Password: "user1",
-	}
-	newUser, err := userStore.Create(u)
+	//createTableQuery := `
+	//	create table if not exits users(
+	//		id text,
+	//		name text,
+	//		primary key(id)
+	//	);
+	//`
+	host := "localhost"
+	port := "5432"
+	user := "setdatauser"
+	database := "lesson17intro"
+	password := "123456789"
+	params := "sslmode=disable"
+	connectionString := fmt.Sprintf("postgres://%s:%s@%s:%s/%s?%s", user, password, host, port, database, params)
+	db, err := sql.Open("postgres", connectionString)
 	if err != nil {
 		log.Fatal(err)
 		return
 	}
-	fmt.Println(newUser)
+	err = db.Ping()
+	if err != nil {
+		log.Fatal(err)
+		return
+	}
 }

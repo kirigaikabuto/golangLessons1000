@@ -1,2 +1,6 @@
 1) install postgresql
 https://www.enterprisedb.com/downloads/postgres-postgresql-downloads
+2) open postgresql
+pgadmin4
+3) import drive
+go get github.com/lib/pq

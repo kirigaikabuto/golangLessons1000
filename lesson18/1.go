@@ -9,6 +9,8 @@ func main() {
 	//productsElements := products.Product{}.GetAll()
 	//fmt.Println(productsElements)
 	//
-	p2 := &products.Product{Id: "f314e547-aba1-48cc-9026-606023862f2b", Name: "11111"}
-	p2.Update()
+	//p2 := &products.Product{Id: "f314e547-aba1-48cc-9026-606023862f2b", Name: "11111"}
+	//p2.Update()
+	p2 := &products.Product{Id: "f314e547-aba1-48cc-9026-606023862f2b"}
+	p2.Delete()
 }

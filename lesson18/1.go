@@ -11,6 +11,9 @@ func main() {
 	//
 	//p2 := &products.Product{Id: "f314e547-aba1-48cc-9026-606023862f2b", Name: "11111"}
 	//p2.Update()
-	p2 := products.Product{Id: "f314e547-aba1-48cc-9026-606023862f2b"}
-	p2.Delete()
+	//p2 := products.Product{Id: "f314e547-aba1-48cc-9026-606023862f2b"}
+	//p2.Delete()
+	p3 := products.NewProduct("", "12323", 300)
+	p3.Save()
+	//p3.Update()
 }

@@ -14,10 +14,60 @@ var (
 	Database *sql.DB
 )
 
+type ProductInternal interface {
+	Save()
+	GetAll() []Product
+	Update()
+	Delete()
+}
+
+func NewProduct(id, name string, price int) ProductInternal {
+	return &Product{Id: id, Name: name, Price: price}
+}
+
 type Product struct {
 	Id    string
 	Name  string
 	Price int
+}
+
+func (p *Product) Save() {
+	p.Id = uuid.New().String()
+	queryInsert := "insert into products (id, name, price) values ($1, $2, $3)"
+	result, err := Database.Exec(queryInsert, p.Id, p.Name, p.Price)
+	if err != nil {
+		log.Fatal(err)
+		return
+	}
+	n, err := result.RowsAffected()
+	if err != nil {
+		log.Fatal(err)
+		return
+	}
+	if n <= 0 {
+		log.Fatal(err)
+		return
+	}
+}
+
+func (p *Product) GetAll() []Product {
+	products := []Product{}
+	selectQuery := "select id, name, price from products"
+	rows, err := Database.Query(selectQuery)
+	if err != nil {
+		log.Fatal(err)
+		return nil
+	}
+	for rows.Next() {
+		item := Product{}
+		err = rows.Scan(&item.Id, &item.Name, &item.Price)
+		if err != nil {
+			log.Fatal(err)
+			return nil
+		}
+		products = append(products, item)
+	}
+	return products
 }
 
 //procedure which start when only start package
@@ -54,45 +104,6 @@ func init() {
 		return
 	}
 	Database = db
-}
-
-func (p *Product) Save() {
-	p.Id = uuid.New().String()
-	queryInsert := "insert into products (id, name, price) values ($1, $2, $3)"
-	result, err := Database.Exec(queryInsert, p.Id, p.Name, p.Price)
-	if err != nil {
-		log.Fatal(err)
-		return
-	}
-	n, err := result.RowsAffected()
-	if err != nil {
-		log.Fatal(err)
-		return
-	}
-	if n <= 0 {
-		log.Fatal(err)
-		return
-	}
-}
-
-func (p Product) GetAll() []Product {
-	products := []Product{}
-	selectQuery := "select id, name, price from products"
-	rows, err := Database.Query(selectQuery)
-	if err != nil {
-		log.Fatal(err)
-		return nil
-	}
-	for rows.Next() {
-		item := Product{}
-		err = rows.Scan(&item.Id, &item.Name, &item.Price)
-		if err != nil {
-			log.Fatal(err)
-			return nil
-		}
-		products = append(products, item)
-	}
-	return products
 }
 
 func (p *Product) Update() {

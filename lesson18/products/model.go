@@ -81,6 +81,7 @@ func (p Product) GetAll() []Product {
 	rows, err := Database.Query(selectQuery)
 	if err != nil {
 		log.Fatal(err)
+		return nil
 	}
 	for rows.Next() {
 		item := Product{}
@@ -123,6 +124,28 @@ func (p *Product) Update() {
 	result, err := Database.Exec(queryUpdate, values...)
 	if err != nil {
 		log.Fatal(err)
+		return
+	}
+	n, err := result.RowsAffected()
+	if err != nil {
+		log.Fatal(err)
+		return
+	}
+	if n <= 0 {
+		log.Fatal(err)
+		return
+	}
+}
+
+func (p *Product) Delete() {
+	if p.Id == "" {
+		log.Fatal("Please need in id")
+		return
+	}
+	result, err := Database.Exec("delete from products where id= $1", p.Id)
+	if err != nil {
+		log.Fatal(err)
+		return
 	}
 	n, err := result.RowsAffected()
 	if err != nil {

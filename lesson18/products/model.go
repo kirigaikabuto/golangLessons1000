@@ -6,6 +6,8 @@ import (
 	"github.com/google/uuid"
 	_ "github.com/lib/pq"
 	"log"
+	"strconv"
+	"strings"
 )
 
 var (
@@ -90,4 +92,45 @@ func (p Product) GetAll() []Product {
 		products = append(products, item)
 	}
 	return products
+}
+
+func (p *Product) Update() {
+	queryUpdate := "update products set "
+	parts := []string{}
+	values := []interface{}{}
+	i := 0
+	if p.Id == "" {
+		log.Fatal("Please need in id")
+		return
+	}
+	if p.Name != "" {
+		i++
+		parts = append(parts, "name=$"+strconv.Itoa(i)) //name=$1
+		values = append(values, p.Name)
+	}
+	if p.Price != 0 {
+		i++
+		parts = append(parts, "price=$"+strconv.Itoa(i)) //name=$1
+		values = append(values, p.Price)
+	}
+	if i == 0 {
+		log.Fatal("nothing to update")
+		return
+	}
+	i++
+	queryUpdate = queryUpdate + strings.Join(parts, ",") + " where id=$" + strconv.Itoa(i)
+	values = append(values, p.Id)
+	result, err := Database.Exec(queryUpdate, values...)
+	if err != nil {
+		log.Fatal(err)
+	}
+	n, err := result.RowsAffected()
+	if err != nil {
+		log.Fatal(err)
+		return
+	}
+	if n <= 0 {
+		log.Fatal(err)
+		return
+	}
 }

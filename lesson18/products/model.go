@@ -72,3 +72,22 @@ func (p *Product) Save() {
 		return
 	}
 }
+
+func (p Product) GetAll() []Product {
+	products := []Product{}
+	selectQuery := "select id, name, price from products"
+	rows, err := Database.Query(selectQuery)
+	if err != nil {
+		log.Fatal(err)
+	}
+	for rows.Next() {
+		item := Product{}
+		err = rows.Scan(&item.Id, &item.Name, &item.Price)
+		if err != nil {
+			log.Fatal(err)
+			return nil
+		}
+		products = append(products, item)
+	}
+	return products
+}

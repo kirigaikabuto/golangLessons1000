@@ -1,2 +1,10 @@
 go get github.com/google/uuid
 go get github.com/lib/pq
+[hw]
+User
+    id:string
+    username:string
+    password:string
+    first_name:string
+    last_name:string
+    age:int

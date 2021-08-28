@@ -3,6 +3,11 @@ Product
     name:string
     price:int
 
+Book
+    id:text
+    name:text
+    price:float64
+    author_id:text
 
 mongodb:
     1)install server

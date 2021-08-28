@@ -2,3 +2,12 @@ Product
     id:text
     name:string
     price:int
+
+
+mongodb:
+    1)install server
+    https://www.mongodb.com/try/download/community
+    start->mongodbC compass
+    2) connect with golang
+    https://www.mongodb.com/blog/post/quick-start-golang-mongodb-starting-and-setup
+    CRUD(create,read,update,delete) data

@@ -1,0 +1,4 @@
+Product
+    id:text
+    name:string
+    price:int

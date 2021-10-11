@@ -1,1 +1,5 @@
-package lesson20
+package main
+
+func main() {
+	
+}

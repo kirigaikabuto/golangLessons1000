@@ -1,7 +1,7 @@
 package main
 
-import "fmt"
+import "go.mongodb.org/mongo-driver/mongo"
 
 func main(){
-	fmt.Println("sdssd")
+	client, err := mongo.Client{}
 }

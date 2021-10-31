@@ -1,0 +1,4 @@
+go mod init
+go get go.mongodb.org/mongo-driver/mongo
+
+brew services start mongodb-community
